@@ -2,23 +2,28 @@ import React, { useState } from 'react';
 import * as S from './Textarea.style';
 import { useKeyPress } from '../../../hooks/useKeyPress';
 
-const Textarea = () => {
+const Textarea = e => {
   const [text, onChange, onKeyPress, onSubmit] = useKeyPress();
   const [commentList, setCommentList] = useState([]);
 
   return (
-    <form>
-      <S.Textarea value={text} onChange={onChange} onKeyUp={onKeyPress} />
+    <S.Container>
+      <S.Textarea
+        value={text}
+        onChange={onChange}
+        onKeyUp={onKeyPress}
+        placeholder="Text your message"
+      />
       {text.length > 0 ? (
-        <S.SubmitChecked type="button" onClick={onSubmit}>
+        <S.Submit type="button" onClick={onSubmit} checkBtn={true}>
           <S.SubmitIcon />
-        </S.SubmitChecked>
+        </S.Submit>
       ) : (
-        <S.Submit type="button" disabled="true">
+        <S.Submit type="button" disabled>
           <S.SubmitIcon />
         </S.Submit>
       )}
-    </form>
+    </S.Container>
   );
 };
 
