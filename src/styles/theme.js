@@ -1,33 +1,33 @@
 const theme = {
-  mainPink: "#FF505F",
-  lightPink: "#ffe5e8",
-  black: "#343434",
-  darkGray: "#787880",
-  gray: "#b9babe",
-  white: "#fff",
+  mainPink: '#FF505F',
+  lightPink: '#ffe5e8',
+  black: '#343434',
+  darkGray: '#787880',
+  gray: '#b9babe',
+  white: '#fff',
 
-  chatBackground: "#F8F8F8",
-  buttonBackground: "#e6e6e8",
+  chatBackground: '#F8F8F8',
+  buttonBackground: '#e6e6e8',
 
-  fontLarge: "20px",
-  fontMedium: "16px",
-  fontRegular: "14px",
-  fontSmall: "12px",
+  fontLarge: '20px',
+  fontMedium: '16px',
+  fontRegular: '14px',
+  fontSmall: '12px',
 
-  weightBold: "700",
-  weightSemiBold: "500",
-  weightRegular: "400",
+  weightBold: '700',
+  weightSemiBold: '500',
+  weightRegular: '400',
 
-  buttonRadius: "4px",
-  chatRadius: "6px",
-  borderGray: "1px solid #b9babe",
+  buttonRadius: '4px',
+  chatRadius: '6px',
+  borderGray: '1px solid #b9babe',
 
-  marginCenter: "0 auto",
+  marginCenter: '0 auto',
 
   mobile: `screen and (max-width: 375px)`,
   tablet: `screen and (max-width: 768px)`,
 
-  flex: (align = "center", justify = "center", direction = "row") => `
+  flex: (align = 'center', justify = 'center', direction = 'row') => `
       display: flex;
       flex-direction: ${direction};
       align-items: ${align};

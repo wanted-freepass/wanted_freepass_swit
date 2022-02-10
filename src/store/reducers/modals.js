@@ -1,4 +1,4 @@
-import { SHOW_MODAL, CLOSE_MODAL } from "../actions/types";
+import { SHOW_MODAL, CLOSE_MODAL } from '../actions/types';
 
 const INITIAL_STATE = {
   showModal: false,

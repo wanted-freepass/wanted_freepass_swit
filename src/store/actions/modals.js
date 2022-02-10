@@ -1,6 +1,6 @@
-import { SHOW_MODAL, CLOSE_MODAL } from "./types";
+import { SHOW_MODAL, CLOSE_MODAL } from './types';
 
-export const showModal = (title) => {
+export const showModal = title => {
   return {
     type: SHOW_MODAL,
     title,
