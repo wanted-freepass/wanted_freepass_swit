@@ -15,7 +15,7 @@ const Textarea = e => {
         placeholder="Text your message"
       />
       {text.length > 0 ? (
-        <S.Submit type="button" onClick={onSubmit} checkBtn={true}>
+        <S.Submit type="button" onClick={onSubmit} checkBtn>
           <S.SubmitIcon />
         </S.Submit>
       ) : (

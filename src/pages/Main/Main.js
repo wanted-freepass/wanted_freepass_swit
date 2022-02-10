@@ -1,16 +1,16 @@
 import React from 'react';
 import * as S from './Main.style';
-import Modal from '../../components/Modal';
+import ProfileModal from '../../components/ProfileModal';
 import Channels from './Channels';
 import Textarea from './Textarea';
 
 const Main = () => {
   return (
     <S.Container>
+      <ProfileModal />
       <Channels />
       <S.Wrapper>
         <Textarea />
-        <Modal />
       </S.Wrapper>
     </S.Container>
   );

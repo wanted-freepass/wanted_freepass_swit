@@ -17,7 +17,7 @@ export const Textarea = styled.textarea`
   font-family: 'Noto-sans';
   font-size: ${({ theme }) => theme.fontMedium};
   position: relative;
-  background-color: ${({ theme, checkBtn }) => theme.white};
+  background-color: ${({ theme }) => theme.white};
 `;
 
 export const Submit = styled.button`
