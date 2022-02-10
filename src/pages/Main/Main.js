@@ -9,24 +9,33 @@ const Main = () => {
     setText(e.target.value);
   };
 
-  console.log(text);
-  const onClick = e => {
+  const onSubmit = e => {
     console.log(text);
   };
 
   const onKeyPress = e => {
-    if (e.key == 'Enter') {
-      onClick();
+    if (e.length === 0) {
+      return;
+    }
+    if (e.key === 'Enter') {
+      onSubmit();
+      setText('');
     }
   };
+
   return (
     <S.Container>
       <form>
-        <textarea value={text} onChange={onChange} onKeyPress={onKeyPress} />
-
-        <button type="button" onClick={onClick}>
-          전송
-        </button>
+        <S.Textarea value={text} onChange={onChange} onKeyUp={onKeyPress} />
+        {text.length > 0 ? (
+          <S.SubmitChecked type="button" onClick={onSubmit}>
+            <S.SubmitIcon />
+          </S.SubmitChecked>
+        ) : (
+          <S.Submit type="button" disabled="true">
+            <S.SubmitIcon />
+          </S.Submit>
+        )}
       </form>
       <Modal />
     </S.Container>
