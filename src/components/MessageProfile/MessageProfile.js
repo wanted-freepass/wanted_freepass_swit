@@ -3,7 +3,6 @@ import * as S from './MessageProfile.style';
 
 const MessageProfile = () => {
   const [isUser, setIsUser] = useState(false);
-
   return (
     <S.Container>
       <S.ProfileImg>

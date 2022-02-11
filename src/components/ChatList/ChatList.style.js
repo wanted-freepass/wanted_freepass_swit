@@ -12,7 +12,6 @@ export const Container = styled.div`
 export const ProfileImg = styled.div`
   width: 50px;
   height: 50px;
-  background-color: rgb(200, 0, 210);
 `;
 
 export const Img = styled.img`
