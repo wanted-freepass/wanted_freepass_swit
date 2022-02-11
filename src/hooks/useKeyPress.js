@@ -12,7 +12,7 @@ export const useKeyPress = () => {
       return;
     }
     setText('');
-    console.log(text);
+    console.log('hooks', text);
   };
 
   const onKeyPress = e => {
