@@ -45,7 +45,7 @@ export const UserIdWrap = styled.div`
 export const UserId = styled.p`
   font-size: ${({ theme }) => theme.fontMedium};
   font-weight: ${({ theme }) => theme.weightBold};
-  padding: 5px 15px 15px;
+  padding: 5px 15px 35px;
 `;
 
 export const Date = styled.p`

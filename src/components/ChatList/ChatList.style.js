@@ -4,9 +4,15 @@ export const Container = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 15px;
-  background-color: rgb(200, 200, 210);
+  padding: 15px;
+  border-radius: 36px;
   display: flex;
   align-items: flex-start;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    background-color: rgba(140, 140, 140, 0.1);
+  }
 `;
 
 export const ProfileImg = styled.div`
