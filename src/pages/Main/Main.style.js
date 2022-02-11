@@ -18,3 +18,9 @@ export const MessageContainer = styled.div`
   background-color: red;
   overflow: scroll;
 `;
+
+export const TextArea = styled.textarea``;
+
+export const TextDiv = styled.div`
+  white-space: pre-line;
+`;
