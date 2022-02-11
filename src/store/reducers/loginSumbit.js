@@ -10,9 +10,9 @@ export default function loginSumbit(state = INITIAL_STATE, action) {
       return {
         ...state,
         loginSumbit: true,
-        userId: console.log('moolbum'),
-        userName: console.log('이용우'),
-        profileImage: console.log('사진'),
+        userId: action.userName,
+        userName: action.inputText,
+        profileImage: action.file,
       };
     default:
       return state;
