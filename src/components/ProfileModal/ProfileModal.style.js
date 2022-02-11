@@ -13,7 +13,7 @@ export const Container = styled.div`
   border: ${props => props.theme.borderGray};
   border-radius: ${({ theme }) => theme.buttonRadius};
   background-color: ${({ theme }) => theme.white};
-  box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.1);
+  box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

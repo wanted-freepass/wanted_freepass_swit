@@ -9,8 +9,6 @@ export const Container = styled.div`
   display: flex;
   align-items: flex-start;
   transition: all 0.5s ease-out;
-  position: absolute;
-  bottom: ${({ bottomPx }) => bottomPx}px;
 
   &:hover {
     background-color: rgba(140, 140, 140, 0.1);

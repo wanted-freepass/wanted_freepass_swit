@@ -9,7 +9,7 @@ export default function content(state = INITIAL_STATE, action) {
     case ADD_CHAT:
       const new_content_list = [...state.list, action.text];
       return { list: new_content_list };
-    // return [...state, { text: action.text, id: Date.now() }];
+
     case DELETE_CHAT:
       return state.filter(chat => chat.id !== action.id);
     default:
