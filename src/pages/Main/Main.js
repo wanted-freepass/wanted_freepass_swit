@@ -21,7 +21,7 @@ const Main = () => {
         <Textarea />
         <S.MessageContainer>
           {data.chatData?.map(chat => (
-            <ChatList chat={chat} />
+            <ChatList key={chat.id} chat={chat} />
           ))}
           <MessageProfile />
         </S.MessageContainer>
