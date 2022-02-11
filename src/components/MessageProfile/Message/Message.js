@@ -12,8 +12,8 @@ function Message({ text, onDelBtnClick }) {
   return (
     <Content>
       <ChatData>
-        {data.map(el => (
-          <ChatDataContent>
+        {data.map(({ el, idx }) => (
+          <ChatDataContent key={idx}>
             <p>{el}</p>
             <DelButton onClick={onDelBtnClick}>DEL</DelButton>
           </ChatDataContent>

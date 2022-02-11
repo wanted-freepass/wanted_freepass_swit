@@ -5,13 +5,13 @@ export const Container = styled.div`
   height: auto;
   margin-bottom: 15px;
   padding: 15px;
-  border-radius: 36px;
+  border-radius: 15px;
   display: flex;
   align-items: flex-start;
   transition: all 0.5s ease-out;
 
   &:hover {
-    background-color: rgba(140, 140, 140, 0.1);
+    background-color: rgba(135, 135, 135, 0.1);
   }
 `;
 

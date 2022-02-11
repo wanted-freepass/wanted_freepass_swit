@@ -4,9 +4,17 @@ export const Container = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 15px;
-  background-color: rgb(200, 200, 210);
+  padding: 15px;
+  border-radius: 15px;
   display: flex;
   align-items: flex-start;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  bottom: ${({ bottomPx }) => bottomPx}px;
+
+  &:hover {
+    background-color: rgba(140, 140, 140, 0.1);
+  }
 `;
 
 export const ProfileImg = styled.div`
@@ -42,9 +50,11 @@ export const UserId = styled.p`
 `;
 
 export const Date = styled.p`
-  font-size: ${({ theme }) => theme.fontMedium};
-  font-weight: ${({ theme }) => theme.weightRegular};
+  font-size: ${({ theme }) => theme.fontSmall};
+  font-style: italic;
+  color: ${({ theme }) => theme.gray};
   padding: 5px 5px 15px;
+  line-height: 1.6;
 `;
 
 export const Message = styled.p`
