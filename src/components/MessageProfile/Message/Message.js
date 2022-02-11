@@ -12,9 +12,10 @@ function Message({ text, onDelBtnClick }) {
   return (
     <Content>
       <ChatData>
-        {data.map(el => (
-          <ChatDataContent>
-            <p>{el}</p>
+        {data.map((el, idx) => (
+          <ChatDataContent key={idx}>
+            <DataContent>{el}</DataContent>
+
             <DelButton onClick={onDelBtnClick}>DEL</DelButton>
           </ChatDataContent>
         ))}
@@ -28,17 +29,27 @@ function Message({ text, onDelBtnClick }) {
 //   };
 // };
 
-const Content = styled.p`
+const Content = styled.div`
   margin-bottom: 20px;
-  background-color: red;
+  width: 100%;
 `;
 
-const ChatData = styled.p``;
+const ChatData = styled.div`
+  padding: 0 15px 15px;
+`;
 
 const ChatDataContent = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+`;
+
+const DataContentWrap = styled.div`
+  display: flex;
+`;
+
+const DataContent = styled.div`
+  margin-bottom: 20px;
 `;
 
 const DelButton = styled.button`
