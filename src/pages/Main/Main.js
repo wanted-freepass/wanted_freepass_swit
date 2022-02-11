@@ -17,6 +17,7 @@ const Main = () => {
     <S.Container>
       <ProfileModal />
       <Channels />
+
       <S.Wrapper>
         <Textarea />
         <S.MessageContainer>
