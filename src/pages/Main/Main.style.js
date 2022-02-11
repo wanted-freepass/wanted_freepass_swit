@@ -17,3 +17,9 @@ export const MessageContainer = styled.div`
   padding-bottom: 50px;
   overflow: scroll;
 `;
+
+export const TextArea = styled.textarea``;
+
+export const TextDiv = styled.div`
+  white-space: pre-line;
+`;

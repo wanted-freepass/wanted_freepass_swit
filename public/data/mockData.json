@@ -1,0 +1,25 @@
+{
+  "chatData": [
+    {
+      "id": 1,
+      "userName": "유진",
+      "profileImage": "https://i.pinimg.com/originals/d0/1e/78/d01e78f19a709a859f7c23d1cab11db3.jpg",
+      "date": "2022-02-12 14:00:01",
+      "content": "하이"
+    },
+    {
+      "id": 2,
+      "userName": "용우",
+      "profileImage": "https://i.ytimg.com/vi/jctON8UYbfU/maxresdefault.jpg",
+      "date": "2022-02-12 14:04:34",
+      "content": "하이하이"
+    },
+    {
+      "id": 3,
+      "userName": "주영",
+      "profileImage": "https://photo.coolenjoy.net/data/editor/2107/59ac272705f0f74ce2e485ca20c30cb936a4fea3.png",
+      "date": "2022-02-12 14:10:59",
+      "content": "하이하이하이"
+    }
+  ]
+}
