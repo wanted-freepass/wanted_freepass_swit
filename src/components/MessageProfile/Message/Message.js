@@ -7,7 +7,7 @@ function Message({ text, onDelBtnClick }) {
   console.log('sss', text);
   return (
     <Content>
-      안녕<DelButton onClick={onDelBtnClick}>DEL</DelButton>
+      안녕 <DelButton onClick={onDelBtnClick}>DEL</DelButton>
     </Content>
   );
 }
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onDelBtnClick: () => dispatch(actionCreators.deleteChat(ownProps.id)),
   };
 };
-const Content = styled.li`
+const Content = styled.p`
   margin-bottom: 20px;
   background-color: red;
 `;
