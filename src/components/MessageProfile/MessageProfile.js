@@ -7,20 +7,24 @@ import { actionCreators } from '../../store';
 import Message from './Message/Message';
 import date from '../../utils/date';
 
-const MessageProfile = ({ chatting, addChat }) => {
-  const login = useSelector(state => state.loginSumbit);
-  console.log(login.profileImage);
-  // console.log('마이', chatting);
+const MessageProfile = ({ RandomColor, firstName }) => {
+  const login = useSelector(state => state.loginSubmit);
 
   return (
     <S.Container>
-      <S.ProfileImg>
-        <S.Img src={login.profileImage} />
+      <S.ProfileImg RandomColor={RandomColor}>
+        {!!login.profileImage ? (
+          <S.Img src={login.profileImage} />
+        ) : (
+          <S.FirstName>{firstName}</S.FirstName>
+        )}
       </S.ProfileImg>
       <S.ProfileInfo>
         <S.UserIdWrap>
           <S.UserId>
-            {login.userName} {login.userName && <p> ** </p>}
+            {login.userName}
+            &nbsp;
+            {login.userName && <p style={{ color: '#FF505F' }}> ** </p>}
           </S.UserId>
           <S.Date>{date()}</S.Date>
         </S.UserIdWrap>
@@ -30,7 +34,6 @@ const MessageProfile = ({ chatting, addChat }) => {
   );
 };
 
-// export default MessageProfile;
 const mapStateProps = state => {
   return { chatting: state };
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { RiCloseFill } from 'react-icons/ri';
+import { RiReplyFill } from 'react-icons/ri';
 
 export const Content = styled.p`
   width: 100%;
@@ -9,7 +10,7 @@ export const Content = styled.p`
 
 export const ChatDataContent = styled.div`
   ${props => props.theme.flex('center', 'space-between')};
-  margin: 10px 15px 0 15px;
+  margin-bottom: 10px;
 `;
 
 export const ChatData = styled.p`
@@ -17,10 +18,17 @@ export const ChatData = styled.p`
   margin-right: 15px;
 `;
 
+export const Reply = styled(RiReplyFill)`
+  font-size: 20px;
+  color: ${props => props.theme.darkGray};
+  background: none;
+  margin-right: 12px;
+  cursor: pointer;
+`;
+
 export const DelButton = styled(RiCloseFill)`
   font-size: 20px;
   color: ${props => props.theme.darkGray};
   background: none;
-  border: 1px solid gray;
-  border-radius: 4px;
+  cursor: pointer;
 `;

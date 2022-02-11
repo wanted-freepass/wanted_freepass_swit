@@ -14,7 +14,10 @@ function Message() {
         <S.ChatDataContent key={index}>
           <p>{el}</p>
           {checked && <Delete />}
-          <S.DelButton onClick={isModalChecked}>X</S.DelButton>
+          <div>
+            <S.Reply />
+            <S.DelButton onClick={isModalChecked} />
+          </div>
         </S.ChatDataContent>
       ))}
     </S.Content>
