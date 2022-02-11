@@ -16,6 +16,7 @@ export const MessageContainer = styled.div`
   height: 94%;
   padding-bottom: 50px;
   overflow: scroll;
+  position: relative;
 `;
 
 export const TextArea = styled.textarea``;

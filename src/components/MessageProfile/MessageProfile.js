@@ -6,7 +6,7 @@ import { actionCreators } from '../../store';
 import Message from './Message/Message';
 
 const MessageProfile = ({ chatting, addChat }) => {
-  console.log('마이', chatting);
+  // console.log('마이', chatting);
 
   return (
     <S.Container>

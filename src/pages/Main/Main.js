@@ -8,11 +8,13 @@ import ChatList from '../../components/ChatList';
 
 const Main = () => {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:3000/data/mockData.json')
       .then(response => response.json())
       .then(data => setData(data));
   }, []);
+
   return (
     <S.Container>
       <ProfileModal />
@@ -21,7 +23,7 @@ const Main = () => {
         <Textarea />
         <S.MessageContainer>
           {data.chatData?.map(chat => (
-            <ChatList chat={chat} />
+            <ChatList key={chat.id} chat={chat} />
           ))}
           <MessageProfile />
         </S.MessageContainer>

@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import * as S from './ChatList.style';
 
 const ChatList = ({ chat }) => {
-  console.log(chat);
+  const [bottomPx, setBottomPx] = useState(0);
+
+  const chatPos = () => {
+    setBottomPx(prev => prev + 100);
+  };
+  console.log(bottomPx);
+
   return (
-    <S.Container>
+    <S.Container bottomPx={bottomPx} onClick={chatPos}>
       <S.ProfileImg>
         <S.Img src={chat.profileImage} />
       </S.ProfileImg>
