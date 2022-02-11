@@ -17,6 +17,10 @@ export const MessageContainer = styled.div`
   padding-bottom: 50px;
   overflow: scroll;
   position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const TextArea = styled.textarea``;
