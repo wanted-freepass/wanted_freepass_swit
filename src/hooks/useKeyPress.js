@@ -7,7 +7,7 @@ export const useKeyPress = () => {
     setText(e.target.value);
   };
 
-  const onSubmit = e => {
+  const onSubmit = () => {
     if (text.trim().length === 0) {
       return;
     }
@@ -16,9 +16,12 @@ export const useKeyPress = () => {
   };
 
   const onKeyPress = e => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
       onSubmit();
       setText('');
+      if (!!e.shiftKey) {
+        setText(text.replaceAll(/(\n|\r\n)/g, '\n'));
+      }
     }
   };
 
