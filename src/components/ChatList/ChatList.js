@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './ChatList.style';
 
 const ChatList = ({ chat }) => {
-  console.log(chat);
   return (
     <S.Container>
       <S.ProfileImg>

@@ -5,5 +5,5 @@ export const CLOSE_MODAL = 'close_modal';
 export const SHOW_TOAST = 'show_toast';
 export const CLOSE_TOAST = 'close_toast';
 
-export const ADD_CHAT = 'ADD_CHAT';
-export const DELETE_CHAT = 'DELETE_CHAT';
+export const ADD_CHAT = 'add_chat';
+export const DELETE_CHAT = 'delete_chat';
