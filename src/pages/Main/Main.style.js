@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
 export const MessageContainer = styled.div`
   height: 94%;
   padding-bottom: 50px;
-  background-color: red;
   overflow: scroll;
 `;
 
