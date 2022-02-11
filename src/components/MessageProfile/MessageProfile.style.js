@@ -28,6 +28,7 @@ export const Img = styled.img`
 `;
 
 export const ProfileInfo = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,7 +45,7 @@ export const UserIdWrap = styled.div`
 export const UserId = styled.p`
   font-size: ${({ theme }) => theme.fontMedium};
   font-weight: ${({ theme }) => theme.weightBold};
-  padding: 5px 15px 15px;
+  padding: 5px 15px 35px;
   display: flex;
 `;
 

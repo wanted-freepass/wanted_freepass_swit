@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginSubmit } from '../../store/actions/loginSubmit';
 import * as S from './ProfileModal.style';
 import { useImageUpload } from '../../hooks/useImageUpload';
 import { useInputTextValue } from '../../hooks/useInputTextValue';
+import { useModalChecked } from '../../hooks/useModalChecked';
 
 const ProfileModal = () => {
   const dispatch = useDispatch();
   const [file, imageUpload] = useImageUpload();
   const [inputText, userInfoSettings] = useInputTextValue();
-  const [isUser, setIsUser] = useState(false);
+  const [checked, isModalChecked] = useModalChecked();
   const login = useSelector(state => state.loginSumbit);
-
-  const handledClosed = () => {
-    setIsUser(prev => !prev);
-  };
-
   console.log(login);
 
   return (
-    !isUser &&
+    !checked &&
     !login.loginSumbit && (
       <S.Container>
-        <S.Button closed onClick={handledClosed}>
+        <S.Button closed onClick={isModalChecked}>
           <S.CloseIcon />
         </S.Button>
         <S.InputWrap>
@@ -33,7 +29,7 @@ const ProfileModal = () => {
           <S.Input defaultValue={inputText} onChange={userInfoSettings} />
         </S.InputWrap>
         <S.Button
-          onClick={() => dispatch(loginSubmit(inputText, file, isUser))}
+          onClick={() => dispatch(loginSubmit(inputText, file, checked))}
         >
           제출
         </S.Button>

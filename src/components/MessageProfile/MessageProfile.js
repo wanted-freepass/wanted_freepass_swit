@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import { actionCreators } from '../../store';
 import Message from './Message/Message';
+import date from '../../utils/date';
 
 const MessageProfile = ({ chatting, addChat }) => {
   const login = useSelector(state => state.loginSumbit);
@@ -17,11 +18,12 @@ const MessageProfile = ({ chatting, addChat }) => {
         <S.Img src={login.profileImage} />
       </S.ProfileImg>
       <S.ProfileInfo>
-        <S.UserId>
-          {login.userName}
-          {login.userName && <p> ** </p>}
-        </S.UserId>
-
+        <S.UserIdWrap>
+          <S.UserId>
+            {login.userName} {login.userName && <p> ** </p>}
+          </S.UserId>
+          <S.Date>{date()}</S.Date>
+        </S.UserIdWrap>
         <Message />
       </S.ProfileInfo>
     </S.Container>
