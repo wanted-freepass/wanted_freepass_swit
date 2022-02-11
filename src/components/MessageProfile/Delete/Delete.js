@@ -7,9 +7,7 @@ const Delete = () => {
   return (
     <S.ModalContainer>
       <S.ModalWrap>
-        <S.ExitWrap>
-          <S.Exit>X</S.Exit>
-        </S.ExitWrap>
+        <S.ExitWrap />
         <div>
           <S.ModalTitle>Delete message</S.ModalTitle>
           <S.Subtitle>메시지를 삭제하시겠습니까?</S.Subtitle>
