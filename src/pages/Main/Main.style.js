@@ -11,3 +11,10 @@ export const Wrapper = styled.div`
   padding: 30px;
   background-color: ${props => props.theme.chatBackground};
 `;
+
+export const MessageContainer = styled.div`
+  height: 94%;
+  padding-bottom: 50px;
+  background-color: red;
+  overflow: scroll;
+`;
