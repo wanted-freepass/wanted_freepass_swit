@@ -7,7 +7,6 @@ const ChatList = ({ chat }) => {
   const chatPos = () => {
     setBottomPx(prev => prev + 100);
   };
-  console.log(bottomPx);
 
   return (
     <S.Container bottomPx={bottomPx} onClick={chatPos}>

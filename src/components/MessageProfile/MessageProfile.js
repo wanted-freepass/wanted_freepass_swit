@@ -1,20 +1,27 @@
 import React from 'react';
 import * as S from './MessageProfile.style';
+import { useSelector } from 'react-redux';
 
 import { connect } from 'react-redux';
 import { actionCreators } from '../../store';
 import Message from './Message/Message';
 
 const MessageProfile = ({ chatting, addChat }) => {
+  const login = useSelector(state => state.loginSumbit);
+  console.log(login.profileImage);
   // console.log('마이', chatting);
 
   return (
     <S.Container>
       <S.ProfileImg>
-        <S.Img src="img/profile.png" />
+        <S.Img src={login.profileImage} />
       </S.ProfileImg>
       <S.ProfileInfo>
-        <S.UserId>홍유진</S.UserId>
+        <S.UserId>
+          {login.userName}
+          {login.userName && <p> ** </p>}
+        </S.UserId>
+
         <Message />
       </S.ProfileInfo>
     </S.Container>
