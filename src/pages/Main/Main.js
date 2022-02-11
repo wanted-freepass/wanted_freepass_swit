@@ -3,6 +3,7 @@ import * as S from './Main.style';
 import ProfileModal from '../../components/ProfileModal';
 import Channels from './Channels';
 import Textarea from './Textarea';
+import MessageProfile from '../../components/MessageProfile';
 
 const Main = () => {
   return (
@@ -11,6 +12,14 @@ const Main = () => {
       <Channels />
       <S.Wrapper>
         <Textarea />
+        <S.MessageContainer>
+          <MessageProfile />
+          <MessageProfile />
+          <MessageProfile />
+          <MessageProfile />
+          <MessageProfile />
+          <MessageProfile />
+        </S.MessageContainer>
       </S.Wrapper>
     </S.Container>
   );
