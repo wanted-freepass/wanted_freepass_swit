@@ -1,21 +1,21 @@
 import React from 'react';
 import * as S from './Message.style';
-import { useSelector } from 'react-redux';
 import Delete from '../Delete';
 import { useModalChecked } from '../../../hooks/useModalChecked';
 
-function Message() {
+function Message({ inputData, ref }) {
   const [checked, isModalChecked] = useModalChecked();
-  const data = useSelector(state => state.addChat.list);
 
   const isDeleteAlert = () => {
     isModalChecked();
   };
 
+  console.log(inputData);
+
   return (
-    <S.Content>
+    <S.Content ref={ref}>
       {checked && <Delete />}
-      {data.map((el, index) => (
+      {inputData.map((el, index) => (
         <S.ChatDataContent key={index}>
           <p>{el}</p>
           {/* {checked && <Delete />} */}

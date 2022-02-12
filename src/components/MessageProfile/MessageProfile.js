@@ -7,7 +7,7 @@ import { actionCreators } from '../../store';
 import Message from './Message/Message';
 import date from '../../utils/date';
 
-const MessageProfile = ({ RandomColor, firstName }) => {
+const MessageProfile = ({ RandomColor, firstName, inputData, ref }) => {
   const login = useSelector(state => state.loginSubmit);
 
   return (
@@ -24,11 +24,11 @@ const MessageProfile = ({ RandomColor, firstName }) => {
           <S.UserId>
             {login.userName}
             &nbsp;
-            {login.userName && <p style={{ color: '#FF505F' }}> ** </p>}
+            {login.userName && <span style={{ color: '#FF505F' }}> ** </span>}
           </S.UserId>
           <S.Date>{date()}</S.Date>
         </S.UserIdWrap>
-        <Message />
+        <Message inputData={inputData} ref={ref} />
       </S.ProfileInfo>
     </S.Container>
   );
