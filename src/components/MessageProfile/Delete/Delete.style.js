@@ -45,6 +45,14 @@ export const Subtitle = styled.p`
   font-weight: ${props => props.theme.weightRegular};
 `;
 
+export const DeleteChatText = styled.p`
+  margin: 10px 0%;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: ${props => props.theme.chatBackground};
+  font-size: ${props => props.theme.fontMedium};
+`;
+
 export const ButtonWrap = styled.div`
   margin: 10px 0;
 `;

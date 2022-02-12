@@ -15,7 +15,6 @@ export const useKeyPress = () => {
     }
     dispatch(addChat(text));
     setText('');
-    console.log('hooks', text);
   };
 
   const onKeyPress = e => {

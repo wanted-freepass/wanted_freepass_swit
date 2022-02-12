@@ -8,7 +8,7 @@ const Textarea = e => {
   const [commentList, setCommentList] = useState([]);
   const data = useSelector(state => state.addChat.list);
   const login = useSelector(state => state.loginSubmit);
-
+  console.log(text.text);
   console.log(data);
   return (
     <S.Container>
