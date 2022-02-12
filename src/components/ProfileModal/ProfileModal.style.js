@@ -14,7 +14,6 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme.buttonRadius};
   background-color: ${({ theme }) => theme.white};
   box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.3);
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +23,7 @@ export const InputWrap = styled.div`
   ${props => props.theme.flex('center', 'center')}
 
   width: 80%;
+  margin: 80px auto;
 `;
 
 export const Input = styled.input.attrs({
@@ -68,7 +68,17 @@ export const Image = styled.img`
 
 export const CloseIcon = styled(RiCloseFill)`
   color: ${({ theme }) => theme.borderGray};
-  font-size: ${({ theme }) => theme.fontLarge};
+  font-size: 24px;
+`;
+
+export const CloseButtonWrap = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
+export const ButtonWrap = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const Button = styled.button`
