@@ -3,19 +3,24 @@ import { useDispatch } from 'react-redux';
 import { addChat } from '../store/actions/content';
 
 export const useKeyPress = () => {
-  const [text, setText] = useState('');
+  // const [text, setText] = useState('');
+  const [text, setText] = useState({
+    id: 1,
+    text: '',
+  });
   const dispatch = useDispatch();
   const onChange = e => {
     setText(e.target.value);
   };
 
+  console.log(text.text);
+
   const onSubmit = () => {
-    if (text.trim().length === 0) {
+    if (text.text.trim().length === 0) {
       return;
     }
     dispatch(addChat(text));
     setText('');
-    console.log('hooks', text);
   };
 
   const onKeyPress = e => {

@@ -8,12 +8,13 @@ const Textarea = e => {
   const [commentList, setCommentList] = useState([]);
   const data = useSelector(state => state.addChat.list);
   const login = useSelector(state => state.loginSubmit);
-
+  console.log(text.text);
   console.log(data);
   return (
     <S.Container>
       <S.Textarea
-        value={text}
+        value={text.text}
+        // value={text}
         onChange={onChange}
         onKeyUp={onKeyPress}
         placeholder={

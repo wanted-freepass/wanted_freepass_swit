@@ -8,16 +8,20 @@ function Message() {
   const [checked, isModalChecked] = useModalChecked();
   const data = useSelector(state => state.addChat.list);
 
+  const isDeleteAlert = () => {
+    isModalChecked();
+  };
+
   return (
     <S.Content>
       {checked && <Delete />}
       {data.map((el, index) => (
         <S.ChatDataContent key={index}>
           <p>{el}</p>
-          {checked && <Delete />}
+          {/* {checked && <Delete />} */}
           <div>
             <S.Reply />
-            <S.DelButton onClick={isModalChecked} />
+            <S.DelButton onClick={isDeleteAlert} />
           </div>
         </S.ChatDataContent>
       ))}
