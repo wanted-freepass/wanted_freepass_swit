@@ -20,22 +20,13 @@ const Main = () => {
 
   const RandomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16);
   const firstName = (login.userName || '').split('', 1);
-
   const messagesRef = useRef();
-  // const message = document.querySelector(message);
-  // const scrollToBottom = () => {
-  //   window.scrollTo({
-  //     top: document.documentElement.scrollHeight,
-  //     behavior: 'smooth',
-  //   });
-  // };
-  console.log(inputData);
-  console.log(messagesRef.current);
 
   const scrollToBottom = () => {
-    if (messagesRef.current) {
-      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-    }
+    messagesRef.current.scrollTo({
+      top: messagesRef.current.scrollHeight,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
@@ -47,7 +38,6 @@ const Main = () => {
       .then(response => response.json())
       .then(data => setMockData(data));
   }, []);
-
   return (
     <S.Container>
       {!checked && !login.loginSubmit ? (
