@@ -18,9 +18,11 @@ const ProfileModal = ({ checked, isModalChecked, isLogged }) => {
 
   return (
     <S.Container>
-      <S.Button closed onClick={onSubmitInfo}>
-        <S.CloseIcon />
-      </S.Button>
+      <S.CloseButtonWrap>
+        <S.Button closed onClick={onSubmitInfo}>
+          <S.CloseIcon />
+        </S.Button>
+      </S.CloseButtonWrap>
       <S.InputWrap>
         <S.InputImageLabel>
           {file ? <S.Image src={file} /> : <S.Profile />}
@@ -28,7 +30,9 @@ const ProfileModal = ({ checked, isModalChecked, isLogged }) => {
         </S.InputImageLabel>
         <S.Input defaultValue={inputText} onChange={userInfoSettings} />
       </S.InputWrap>
-      <S.Button onClick={onSubmitInfo}>제출</S.Button>
+      <S.ButtonWrap>
+        <S.Button onClick={onSubmitInfo}>제출</S.Button>
+      </S.ButtonWrap>
     </S.Container>
   );
 };

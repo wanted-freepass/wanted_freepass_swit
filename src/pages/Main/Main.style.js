@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   margin-left: 18%;
   padding: 30px;
   background-color: ${props => props.theme.chatBackground};
+  /* background: red; */
 `;
 
 export const MessageContainer = styled.div`

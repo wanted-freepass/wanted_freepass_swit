@@ -9,15 +9,15 @@ function Message({ inputData, ref }) {
 
   console.log(ref);
   return (
-    <S.Content>
+    <S.Content ref={ref}>
       {inputData.map((el, index) => (
         <S.ChatDataContent key={index}>
-          <p ref={ref}>{el}</p>
+          <S.ChatData>{el}</S.ChatData>
           {checked && <Delete />}
-          <div>
+          <S.DataWrap>
             <S.Reply />
             <S.DelButton onClick={isModalChecked} />
-          </div>
+          </S.DataWrap>
         </S.ChatDataContent>
       ))}
     </S.Content>

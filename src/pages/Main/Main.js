@@ -29,8 +29,8 @@ const Main = () => {
   //     behavior: 'smooth',
   //   });
   // };
-
-  console.log(messagesRef);
+  console.log(inputData);
+  console.log(messagesRef.current);
 
   const scrollToBottom = () => {
     if (messagesRef.current) {
@@ -50,7 +50,7 @@ const Main = () => {
 
   return (
     <S.Container>
-      {!login.loginSubmit && (
+      {!checked && !login.loginSubmit ? (
         <>
           <ProfileModal
             checked={checked}
@@ -63,26 +63,37 @@ const Main = () => {
               backgroundColor: 'rgba(0,0,0,0.5)',
               width: '100%',
               height: '100%',
-              // position: 'absolute',
-              // zIndex: '9',
-              // left: '0',
+              position: 'absolute',
+              left: '0',
+              zIndex: '12',
             }}
           />
         </>
+      ) : (
+        alert('채팅할 준비가 되었습니다!') && (
+          <S.Wrapper>
+            <S.MessageContainer ref={messagesRef}>
+              {mockData.chatData?.map(chat => (
+                <ChatList key={chat.id} chat={chat} />
+              ))}
+              <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+            </S.MessageContainer>
+            <Textarea />
+          </S.Wrapper>
+        )
       )}
 
       <Channels />
       <S.Wrapper>
-        <S.MessageContainer>
-          {mockData.chatData?.map(chat => (
-            <ChatList key={chat.id} chat={chat} />
-          ))}
-          <MessageProfile
-            RandomColor={RandomColor}
-            firstName={firstName}
-            inputData={inputData}
-            ref={messagesRef}
-          />
+        <S.MessageContainer ref={messagesRef}>
+          {!checked && !login.loginSubmit
+            ? null
+            : mockData.chatData?.map(chat => (
+                <ChatList key={chat.id} chat={chat} />
+              ))}
+          {!checked && !login.loginSubmit ? null : (
+            <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+          )}
         </S.MessageContainer>
         <Textarea />
       </S.Wrapper>

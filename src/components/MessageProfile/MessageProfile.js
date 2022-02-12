@@ -24,7 +24,7 @@ const MessageProfile = ({ RandomColor, firstName, inputData, ref }) => {
           <S.UserId>
             {login.userName}
             &nbsp;
-            {login.userName && <p style={{ color: '#FF505F' }}> ** </p>}
+            {login.userName && <span style={{ color: '#FF505F' }}> ** </span>}
           </S.UserId>
           <S.Date>{date()}</S.Date>
         </S.UserIdWrap>
