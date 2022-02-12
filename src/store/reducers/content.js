@@ -11,7 +11,10 @@ export default function content(state = INITIAL_STATE, action) {
       return { list: new_content_list };
 
     case DELETE_CHAT:
-      return state.filter(chat => chat.id !== action.id);
+      const new_bucket_list = state.list.filter((l, idx) => {
+        return parseInt(action.id) !== idx;
+      });
+      return { list: new_bucket_list };
     default:
       return state;
   }

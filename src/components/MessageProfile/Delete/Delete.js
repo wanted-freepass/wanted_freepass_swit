@@ -1,16 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import * as S from './Delete.style';
 import { useModalChecked } from '../../../hooks/useModalChecked';
+import { deleteChat } from '../../../store/actions/content';
 
-const Delete = () => {
+const Delete = ({ inputData, chatData }) => {
   const [checked, isModalChecked] = useModalChecked();
-  const chatData = useSelector(state => state.deleteChat.list);
-
-  const isRemoveChat = () => {
-    chatData.filter(chat => chat !== chatData);
-    console.log(chatData);
-  };
 
   return (
     <div>
@@ -24,7 +18,7 @@ const Delete = () => {
             </div>
             <S.ButtonWrap>
               <S.CancelButtton onClick={isModalChecked}>Cancel</S.CancelButtton>
-              <S.DeleteButtton onClick={isRemoveChat}>Delete</S.DeleteButtton>
+              <S.DeleteButtton onClick={deleteChat}>Delete</S.DeleteButtton>
             </S.ButtonWrap>
           </S.ModalWrap>
         </S.ModalContainer>
