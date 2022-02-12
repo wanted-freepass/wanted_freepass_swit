@@ -10,17 +10,25 @@
 
 ### 1조 FreePass
 
-| 팀원                                                | 역할                                                                                                |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 양주영 [@Junghoon-P](https://github.com/Junghoon-P) | 상품 카테고리 선택 컴포넌트, 필터 태그 검색 컴포넌트 / Button 컴포넌트                              |
-| 이용우 [@krungy](https://github.com/krungy)         | 상품 정보 고시 컴포넌트, 이미지 업로드 컴포넌트 / Input, Toggle, Icon 컴포넌트                      |
-| 홍유진 [@howyoujini](https://github.com/howyoujini) | 상품 옵션 컴포넌트, 페이지 레이아웃 구성, 네비게이션 바 / Content title, Content container 컴포넌트 |
+| 팀원                                                 | 역할                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------- |
+| 이용우 [@moolbum](https://github.com/moolbum) (팀장) | 로그인 페이지, 메세지 입력창, 삭제모달 레이아웃         |
+| 양주영 [@yangddu](https://github.com/yangddu)        | 메세지 입력창, 대화목록, 페이지 레이아웃,               |
+| 홍유진 [@howyoujini](https://github.com/howyoujini)  | 로그인 페이지, 메세지 입력창, 대화목록, 페이지 레이아웃 |
 
 <br>
 
 ## 프로젝트 설명
 
 - 프로필사진과 아이디를 입력 하여 로그인을 하고 메세지를 입력하는 웹 어플리케이션 입니다.
+
+<br>
+
+## 개발 기간
+
+### 2022. 2. 10 ~ 2022. 2. 12
+
+<br>
 
 ## 프로젝트 실행 방법
 
@@ -42,67 +50,69 @@
 ## Tools
 
 ```
-- View (React.js, React-Router, Styled-components)
+- View (React.js, Styled-components)
 - Build Tool (Create React App)
 - Code Quality Tool (Prettier)
 - Other Tools (Git, Github, notion, Slack. AWS)
+- State (React-Redux)
 ```
-
-### 이름
-
-#### 기능 1
-
-- [x] 디테일한 기능에 대한 설명
-- [x] 디테일한 기능에 대한 설명
-
-#### 기능 2
-
-- [x] 디테일한 기능에 대한 설명
-- [x] 디테일한 기능에 대한 설명
 
 <br>
 
-## 📂 디렉토리 구조
+### 👨‍💻 이용우
 
-```bash
-.
-├── assets
-├── class
-├── components
-│   ├── base
-│   │   ├── Button
-│   │   ├── CheckBox
-│   │   ├── ContentContainer
-│   │   ├── ContentItem
-│   │   ├── DateInput
-│   │   ├── Icon
-│   │   ├── Input
-│   │   ├── RadioBox
-│   │   ├── Toggle
-│   │   └── Upload
-│   └── domain
-│       ├── Benefit
-│       ├── Delivery
-│       │   ├── DateInputContainer
-│       │   └── DeliveryAlert
-│       ├── ImageUploadContainer
-│       ├── ImageUploadSection
-│       ├── Layout
-│       │   ├── NavBar
-│       │   └── NavButton
-│       ├── OptionSelector
-│       │   ├── AdditionalItem
-│       │   ├── OptionItem
-│       │   └── ProductItem
-│       ├── Others
-│       ├── Period
-│       │   └── RadioList
-│       ├── ProductBaseInfo
-│       │   ├── FIlterTag
-│       │   └── SelectedTags
-│       └── ProductInformationNotice
-│           └── InformationContentContainer
-├── hooks
-├── styles
-└── utils
-```
+#### 로그인 페이지
+
+- [x] 로그인 정보 Redux 저장
+- [x] 로그인 페이지 레이아웃 구현
+
+#### 메세지 입력창
+
+- [x] 엔터키로 전송 및 입력시 전송버튼 활성화
+- [x] 컨텐츠 미입력시 전송 비활성화
+
+#### 삭제모달 레이아웃
+
+- [x] 채팅 메세지 삭제버튼 클릭시 모달 활성화
+
+<br>
+
+### 👨‍💻 양주영
+
+#### 메세지 입력창
+
+- [x] 메세지 입력시 Redux 저장
+- [x] 로그인 페이지 레이아웃 구현
+
+#### 대화목록
+
+- [x] mock data로 3명이 5건의 메시지를 주고 받는 내용 출력
+- [x] 메세지 입력 날짜 yyyy-mm-dd hh:MM:ss 포맷으로 출력
+
+#### 페이지 레이아웃
+
+- [x] 사이드 페이지 레이아웃 구현
+- [x] 메인채팅 로그인 화면 레이아웃 구현
+
+<br>
+
+### 👨‍💻 홍유진
+
+#### 로그인 페이지
+
+- [x] 로그인 페이지 정규식 구현 (이름 필수 입력)
+- [x] 로그인 페이지 레이아웃 구현
+
+#### 메세지 입력창
+
+- [x] 전송한 메시지의 경우 이름 옆에 \* 문자 출력
+
+#### 대화목록
+
+- [x] 메시지의 정렬은 과거 부터 최신 순으로 정렬
+- [x] scrollToBottom
+
+#### 페이지 레이아웃
+
+- [x] 사이드 페이지 레이아웃 구현
+- [x] 메인채팅 로그인 화면 레이아웃 구현

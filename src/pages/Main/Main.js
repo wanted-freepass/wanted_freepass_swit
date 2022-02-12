@@ -38,6 +38,8 @@ const Main = () => {
     scrollToMyRef();
   }, [chatList]);
 
+  console.log(chatList);
+
   return (
     <S.Container>
       {!checked && !login.loginSubmit ? (
