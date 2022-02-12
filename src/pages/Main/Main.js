@@ -53,20 +53,36 @@ const Main = () => {
               backgroundColor: 'rgba(0,0,0,0.5)',
               width: '100%',
               height: '100%',
+              position: 'absolute',
+              left: '0',
+              zIndex: '12',
             }}
           />
         </>
       ) : (
-        alert('채팅할 준비가 되었습니다!')
+        alert('채팅할 준비가 되었습니다!') && (
+          <S.Wrapper>
+            <S.MessageContainer ref={scrollRef}>
+              {data.chatData?.map(chat => (
+                <ChatList key={chat.id} chat={chat} />
+              ))}
+              <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+            </S.MessageContainer>
+            <Textarea />
+          </S.Wrapper>
+        )
       )}
-
       <Channels />
       <S.Wrapper>
         <S.MessageContainer ref={scrollRef}>
-          {data.chatData?.map(chat => (
-            <ChatList key={chat.id} chat={chat} />
-          ))}
-          <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+          {!checked && !login.loginSubmit
+            ? null
+            : data.chatData?.map(chat => (
+                <ChatList key={chat.id} chat={chat} />
+              ))}
+          {!checked && !login.loginSubmit ? null : (
+            <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+          )}
         </S.MessageContainer>
         <Textarea />
       </S.Wrapper>
