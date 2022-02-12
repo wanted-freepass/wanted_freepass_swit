@@ -9,7 +9,6 @@ const Delete = () => {
 
   const isRemoveChat = () => {
     chatData.filter(chat => chat !== chatData);
-    console.log(chatData);
   };
 
   return (
