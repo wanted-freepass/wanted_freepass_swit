@@ -10,8 +10,6 @@ const ProfileModal = ({ checked, isModalChecked, isLogged }) => {
   const [file, imageUpload] = useImageUpload();
   const [inputText, userInfoSettings] = useInputTextValue();
 
-  console.log(isLogged, 'd홍유진', file, inputText);
-
   const onSubmitInfo = () => {
     !!inputText
       ? dispatch(loginSubmit(inputText, file, checked))

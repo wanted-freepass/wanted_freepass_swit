@@ -11,36 +11,46 @@ import ChatList from '../../components/ChatList';
 import { useModalChecked } from '../../hooks/useModalChecked';
 
 const Main = () => {
-  const [data, setData] = useState([]);
+  const [mockData, setMockData] = useState([]);
 
-  const chatList = useSelector(state => state.list);
-  const [checked, isModalChecked] = useModalChecked();
+  const inputData = useSelector(state => state.addChat.list);
   const login = useSelector(state => state.loginSubmit);
+
+  const [checked, isModalChecked] = useModalChecked();
 
   const RandomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16);
   const firstName = (login.userName || '').split('', 1);
 
-  const scrollRef = useRef();
+  const messagesRef = useRef();
+  // const message = document.querySelector(message);
+  // const scrollToBottom = () => {
+  //   window.scrollTo({
+  //     top: document.documentElement.scrollHeight,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
-  const scrollToMyRef = () => {
-    const scroll =
-      scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
-    scrollRef.current.scrollTo(0, scroll);
+  console.log(messagesRef);
+
+  const scrollToBottom = () => {
+    if (messagesRef.current) {
+      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+    }
   };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [inputData]);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/mockData.json')
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => setMockData(data));
   }, []);
-
-  useEffect(() => {
-    scrollToMyRef();
-  }, [chatList]);
 
   return (
     <S.Container>
-      {!checked && !login.loginSubmit ? (
+      {!login.loginSubmit && (
         <>
           <ProfileModal
             checked={checked}
@@ -53,20 +63,26 @@ const Main = () => {
               backgroundColor: 'rgba(0,0,0,0.5)',
               width: '100%',
               height: '100%',
+              // position: 'absolute',
+              // zIndex: '9',
+              // left: '0',
             }}
           />
         </>
-      ) : (
-        alert('채팅할 준비가 되었습니다!')
       )}
 
       <Channels />
       <S.Wrapper>
-        <S.MessageContainer ref={scrollRef}>
-          {data.chatData?.map(chat => (
+        <S.MessageContainer>
+          {mockData.chatData?.map(chat => (
             <ChatList key={chat.id} chat={chat} />
           ))}
-          <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+          <MessageProfile
+            RandomColor={RandomColor}
+            firstName={firstName}
+            inputData={inputData}
+            ref={messagesRef}
+          />
         </S.MessageContainer>
         <Textarea />
       </S.Wrapper>

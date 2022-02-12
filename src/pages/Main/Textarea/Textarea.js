@@ -5,11 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Textarea = e => {
   const [text, onChange, onKeyPress, onSubmit] = useKeyPress();
-  const [commentList, setCommentList] = useState([]);
-  const data = useSelector(state => state.addChat.list);
   const login = useSelector(state => state.loginSubmit);
 
-  console.log(data);
   return (
     <S.Container>
       <S.Textarea
