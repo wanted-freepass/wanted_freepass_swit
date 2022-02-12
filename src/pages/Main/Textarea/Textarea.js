@@ -13,8 +13,7 @@ const Textarea = e => {
   return (
     <S.Container>
       <S.Textarea
-        value={text.text}
-        // value={text}
+        value={text}
         onChange={onChange}
         onKeyUp={onKeyPress}
         placeholder={

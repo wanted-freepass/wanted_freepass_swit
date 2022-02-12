@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 export default function content(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ADD_CHAT:
-      const new_content_list = [...state.list, action.text, action.id];
+      const new_content_list = [...state.list, action.text];
       return { list: new_content_list };
 
     case DELETE_CHAT:
