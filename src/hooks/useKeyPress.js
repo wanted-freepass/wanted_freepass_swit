@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addChat } from '../store/actions/content';
-import { ADD_CHAT } from '../store/actions/types';
 
 export const useKeyPress = () => {
   const [text, setText] = useState('');

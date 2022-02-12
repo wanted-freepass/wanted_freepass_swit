@@ -14,7 +14,11 @@ function Message() {
       {data.map((el, index) => (
         <S.ChatDataContent key={index}>
           <p>{el}</p>
-          <S.DelButton onClick={isModalChecked}>X</S.DelButton>
+          {checked && <Delete />}
+          <div>
+            <S.Reply />
+            <S.DelButton onClick={isModalChecked} />
+          </div>
         </S.ChatDataContent>
       ))}
     </S.Content>

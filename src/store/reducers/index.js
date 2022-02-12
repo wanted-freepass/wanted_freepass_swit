@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import addChat from './content';
 import deleteChat from './content';
-import loginSumbit from './loginSumbit';
+import loginSubmit from './loginSubmit';
 
 const rootReducer = combineReducers({
   addChat,
   deleteChat,
-  loginSumbit,
+  loginSubmit,
 });
 
 export default rootReducer;

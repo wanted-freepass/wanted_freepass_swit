@@ -15,7 +15,7 @@ export const ModalWrap = styled.div`
   padding: 30px;
   background-color: #fff;
   z-index: 999;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.3);
 `;
 
 export const ExitWrap = styled.div`
