@@ -52,14 +52,14 @@ export const UserIdWrap = styled.div`
   display: flex;
 `;
 
-export const UserId = styled.p`
+export const UserId = styled.span`
   font-size: ${({ theme }) => theme.fontMedium};
   font-weight: ${({ theme }) => theme.weightBold};
   padding: 5px 15px 15px;
   display: flex;
 `;
 
-export const Date = styled.p`
+export const Date = styled.span`
   font-size: ${({ theme }) => theme.fontSmall};
   font-style: italic;
   color: ${({ theme }) => theme.gray};
