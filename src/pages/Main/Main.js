@@ -11,32 +11,42 @@ import ChatList from '../../components/ChatList';
 import { useModalChecked } from '../../hooks/useModalChecked';
 
 const Main = () => {
-  const [data, setData] = useState([]);
+  const [mockData, setMockData] = useState([]);
 
-  const chatList = useSelector(state => state.list);
-  const [checked, isModalChecked] = useModalChecked();
+  const inputData = useSelector(state => state.addChat.list);
   const login = useSelector(state => state.loginSubmit);
+
+  const [checked, isModalChecked] = useModalChecked();
 
   const RandomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16);
   const firstName = (login.userName || '').split('', 1);
 
-  const scrollRef = useRef();
+  const messagesRef = useRef();
+  // const message = document.querySelector(message);
+  // const scrollToBottom = () => {
+  //   window.scrollTo({
+  //     top: document.documentElement.scrollHeight,
+  //     behavior: 'smooth',
+  //   });
+  // };
+  console.log(inputData);
+  console.log(messagesRef.current);
 
-  const scrollToMyRef = () => {
-    const scroll =
-      scrollRef.current.scrollHeight - scrollRef.current.clientHeight;
-    scrollRef.current.scrollTo(0, scroll);
+  const scrollToBottom = () => {
+    if (messagesRef.current) {
+      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+    }
   };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [inputData]);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/mockData.json')
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => setMockData(data));
   }, []);
-
-  useEffect(() => {
-    scrollToMyRef();
-  }, [chatList]);
 
   return (
     <S.Container>
@@ -62,8 +72,8 @@ const Main = () => {
       ) : (
         alert('채팅할 준비가 되었습니다!') && (
           <S.Wrapper>
-            <S.MessageContainer ref={scrollRef}>
-              {data.chatData?.map(chat => (
+            <S.MessageContainer ref={messagesRef}>
+              {mockData.chatData?.map(chat => (
                 <ChatList key={chat.id} chat={chat} />
               ))}
               <MessageProfile RandomColor={RandomColor} firstName={firstName} />
@@ -72,16 +82,21 @@ const Main = () => {
           </S.Wrapper>
         )
       )}
+
       <Channels />
       <S.Wrapper>
-        <S.MessageContainer ref={scrollRef}>
+        <S.MessageContainer ref={messagesRef}>
           {!checked && !login.loginSubmit
             ? null
-            : data.chatData?.map(chat => (
+            : mockData.chatData?.map(chat => (
                 <ChatList key={chat.id} chat={chat} />
               ))}
           {!checked && !login.loginSubmit ? null : (
-            <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+            <MessageProfile
+              RandomColor={RandomColor}
+              firstName={firstName}
+              inputData={inputData}
+            />
           )}
         </S.MessageContainer>
         <Textarea />
