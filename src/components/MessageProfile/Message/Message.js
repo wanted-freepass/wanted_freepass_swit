@@ -10,10 +10,10 @@ function Message() {
 
   return (
     <S.Content>
+      {checked && <Delete />}
       {data.map((el, index) => (
         <S.ChatDataContent key={index}>
           <p>{el}</p>
-          {checked && <Delete />}
           <S.DelButton onClick={isModalChecked}>X</S.DelButton>
         </S.ChatDataContent>
       ))}

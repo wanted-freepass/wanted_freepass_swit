@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export const useModalChecked = e => {
   const [checked, setChecked] = useState(false);
@@ -6,6 +6,5 @@ export const useModalChecked = e => {
   const isModalChecked = () => {
     setChecked(prev => !prev);
   };
-
   return [checked, isModalChecked];
 };
