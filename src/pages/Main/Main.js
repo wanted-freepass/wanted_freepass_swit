@@ -92,7 +92,11 @@ const Main = () => {
                 <ChatList key={chat.id} chat={chat} />
               ))}
           {!checked && !login.loginSubmit ? null : (
-            <MessageProfile RandomColor={RandomColor} firstName={firstName} />
+            <MessageProfile
+              RandomColor={RandomColor}
+              firstName={firstName}
+              inputData={inputData}
+            />
           )}
         </S.MessageContainer>
         <Textarea />
